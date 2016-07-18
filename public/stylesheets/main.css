@@ -1,0 +1,303 @@
+/* Header
+-------------------------------------------------------------- */
+#header {
+    clear: both;
+    width: 100%;
+    float: left;
+    padding: 12px 0 0 0;
+}
+#branding {
+    float: left;
+    width: 45%;
+    overflow: hidden;
+    background: url(http://neugalschool.co.in/wp-content/uploads/2016/02/new2nd-6-300x60.png) no-repeat top left;
+    margin-bottom:18px;
+}
+#site-title {
+    font-family: 'Abel', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 3em;	/* 36 / 12 = 3 */
+    line-height: 1em;
+    margin: 0 0 3px 0;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+#site-title a {
+    color: #222;
+    border-bottom: none;
+}
+#header img { max-width: 100%; }
+#site-description {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.9166666666666667em;	/* 11 / 12 = 0.9166666666666667 */
+    font-weight: normal;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+    color: #bbb;
+    float: left;
+    width: 91.48936170212766%;
+    clear: both;
+}
+.breadcrumbs {
+    font-size: 0.9166666666666667em;
+    color: #aaa;
+    float: left;
+    width: 96.5%;
+    background: #f3f3f3;
+    padding: .25em .6em .35em .9em;
+    margin-bottom: 20px;
+    border-left: 10px solid #e9e9e9;
+}
+.breadcrumbs a, .breadcrumbs a:visited { color: #777; }
+.breadcrumbs a:hover { color: #000; }
+#sidebar-header {
+    overflow: hidden;
+    float: right;
+    width: 30%;	/* less than 468 / 940 */
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Primary menu
+-------------------------------------------------------------- */
+#menu-primary {
+    font-size: 1em;
+    width: 100%;
+    margin: 0 0 10px 0;
+    float: left;
+    clear: left;
+    position: relative;
+    padding-left:4%;
+    z-index: 99;
+}
+#menu-primary li {
+    display: block;
+    float: left;
+    min-height: 30px;
+    padding-left: 1.8em;
+    background: url(http://www.aditi.edu.in/wp-content/themes/aditi/images/menu-separator.png) no-repeat left 15%;
+}
+#menu-primary li:first-child {
+    padding-left: 0;
+    background: none;
+}
+#menu-primary li a {
+    font-family: 'Abel', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #669900;
+    font-size: 1.5em;
+    font-weight:normal;
+    line-height: 1em;
+    margin-right: 0.88em; /* The padding space for each main menu */
+    display: block;
+    text-transform: lowercase;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* Safari 3.0 and Opera 9 rules here */
+    #menu-primary li a {
+        font-family: 'Abel', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: #669900;
+        font-size: 1.5em;
+        font-weight:normal;
+        line-height: 1em;
+        margin-right: 0.88em; /* The padding space for each main menu */
+        display: block;
+        text-transform: lowercase; }
+}
+#menu-primary li.current-menu-item a { color: #aaa; }
+#menu-primary li li, #menu-primary li li.current-menu-item li {
+    clear: both;
+    float: none;
+    border-top: 1px solid #ddd;
+    padding-left: 0;
+    background: none;
+}
+#menu-primary li li:first-child, #menu-primary li li.current-menu-item li:first-child { border-top: none; }
+#menu-primary li li a, #menu-primary li li.current-menu-item li a {
+    font-family: 'Abel', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #669900;
+    font-size: 1.333333333333333em;
+    font-weight:500;
+    line-height: 1em;
+    text-transform: lowercase;
+    margin: 0 5px;
+    padding: 10px 10px;
+
+}
+#menu-primary ul li a:hover, #menu-primary li ul li a:hover {
+    color: #da511f;
+    border-bottom: none;
+}
+
+/* Dropdowns
+-------------------------------------------------------------- */
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu li:hover { visibility: inherit }
+.menu li {
+    float: left;
+    position: relative;
+}
+.menu a {
+    display: block;
+    position: relative;
+}
+#menu-primary li ul {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+    background: #fff;
+    z-index: 100;
+}
+#menu-primary li:first-child ul { left: -20px; }
+#menu-primary li:hover ul, #menu-primary li.sfHover ul { display: block; }
+#menu-primary li:hover li ul, #menu-primary li.sfHover li ul { top: -999em; }
+#menu-primary li li:hover ul, #menu-primary li li.sfHover ul {
+    top: -1px;
+    left: 100%;
+    margin-left: 0;
+    border-top: 1px solid #e5e5e5;
+}
+.sf-sub-indicator {
+    text-indent: -9999em;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background: url(http://www.aditi.edu.in/wp-content/themes/aditi/images/dropdown.png) no-repeat right 40%;
+    position: absolute;
+    top: 25%;
+    right: 0;
+}
+.menu li li .sf-sub-indicator {
+    top: 37%;
+    background: url(http://www.aditi.edu.in/wp-content/themes/aditi/images/dropright.png) no-repeat right 50%;
+    margin-right: 7px;
+}
+.menu li a.sf-with-ul { padding-right: 16px; }
+
+/* Secondary menu
+-------------------------------------------------------------- */
+#menu-secondary {
+    font-size: 1em;
+    width: 100%;
+    margin: 0 0 10px 0;
+    float: left;
+    clear: left;
+    position: relative;
+    background: #f5f5f5;
+    margin-bottom: 29px;
+    z-index: 2;
+}
+#menu-secondary li {
+    display: block;
+    float: left;
+    width: 100%;
+}
+#menu-secondary li a {
+    font-size: 1em;
+    font-weight:500;
+    line-height: 1.2em;
+    display: block;
+    padding: 1em 1em;
+    text-transform: uppercase;
+    color: #da511f;
+    background: #e1e1e1;
+    border-bottom: 1px solid #ffffff;
+}
+#menu-secondary li a:hover {
+    color: #fff;
+    background: #99ca3c;
+}
+#menu-secondary li.current-menu-item a { color: #555; }
+#menu-secondary li.current-menu-item li a { color: #ccc; }
+#menu-secondary li li, #menu-secondary li li.current-menu-item li {
+    clear: both;
+    float: none;
+}
+#menu-secondary li li:first-child, #menu-secondary li li.current-menu-item li:first-child { border-top: none; }
+#menu-secondary li li a, #menu-secondary li li.current-menu-item li a {
+    text-transform: none;
+    color: #da511f;
+}
+#menu-secondary li li a {
+    font-size: 0.9166666666666667em;
+    padding: .97em 1.1em;
+}
+
+/* Dropdowns (secondary)
+-------------------------------------------------------------- */
+#menu-secondary li ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    border: 1px solid #eeeeee;
+    border-bottom: none;
+    left: 100%;
+    z-index: 100;
+}
+#menu-secondary li:hover ul, #menu-secondary li.sfHover ul { display: block; }
+#menu-secondary li:first-child:hover ul, #menu-secondary li:first-child.sfHover ul { top: 0; }
+#menu-secondary li:hover li ul, #menu-secondary li.sfHover li ul { top: -9999em; }
+#menu-secondary li li:hover ul, #menu-secondary li li.sfHover ul {
+    top: -1px;
+    margin-left: 0;
+}
+#menu-secondary .sf-sub-indicator {
+    text-indent: -9999em;
+    width: 10px;
+    height: 10px;
+    display: block;
+    background: url(http://www.aditi.edu.in/wp-content/themes/aditi/images/dropright-secondary.png) no-repeat right 0;
+    position: absolute;
+    top: 38%;
+    right: 10px;
+}
+#menu-secondary .menu li li .sf-sub-indicator { right: 5px; }
+
+/* Search form widget
+-------------------------------------------------------------- */
+.widget .search-form { overflow: hidden; }
+.widget .search-form label {
+    font-size: 0.9166666666666667em;
+    line-height: 1.75em;
+    color: #aaa;
+}
+.widget .search-form input[type="text"] {
+    width: 91.5%;
+    float: left;
+    padding: 8px 10px;
+    font-size: 1em;
+    color: #aaa;
+}
+.search-form .search-submit, .widget.search .widget-title { display: none; }
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+    height: 500px;
+    margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+    height: 500px;
+    background-color: #777;
+}
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}

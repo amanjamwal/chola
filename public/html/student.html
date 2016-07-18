@@ -1,0 +1,41 @@
+<style>
+	.ng-isolate-scope {
+		display: none;
+	}
+	th {
+		text-align: left !important;
+	}
+</style>
+
+<button ng-click="newStudent()" class="btn btn-default btn-xs">NEW</button>
+
+<table ng-table="studentTable" class="table table-striped table-hover">
+	<tbody>
+		<tr ng-repeat="row in $data">
+			<td data-title="'ID'">
+				<span ng-hide="studentEdit == $index">{{row.id}}</span>
+				<input ng-model="row.id" ng-show="studentEdit == $index" ng-click="$event.stopPropagation();" type="number" class="form-control input-sm" /></td>
+			<td data-title="'Name'">
+				<span ng-hide="studentEdit == $index">{{row.name}}</span>
+				<input ng-model="row.name" ng-show="studentEdit == $index" ng-click="$event.stopPropagation();" type="text" class="form-control input-sm" />
+			</td>
+			<td data-title="'Email'">
+				<span ng-hide="studentEdit == $index">{{row.email}}</span>
+				<input ng-model="row.email" ng-show="studentEdit == $index" ng-click="$event.stopPropagation();" type="text" class="form-control input-sm" />
+			</td>
+			<td data-title="'Company'">
+				<span ng-hide="studentEdit == $index">{{row.company}}</span>
+				<input ng-model="row.company" ng-show="studentEdit == $index" ng-click="$event.stopPropagation();" type="text" class="form-control input-sm" />
+			</td>
+			<td data-title="'Position'">
+				<span ng-hide="studentEdit == $index">{{row.position}}</span>
+				<input ng-model="row.position" ng-show="studentEdit == $index" ng-click="$event.stopPropagation();" type="text" class="form-control input-sm" />
+			</td>
+			<td>
+				<button ng-click="studentEdit = $index; $event.stopPropagation();" ng-hide="studentEdit == $index" class="btn btn-default btn-xs">EDIT</button>
+				<button ng-click="upsertStudent(row); $event.stopPropagation();" ng-show="studentEdit == $index" class="btn btn-success btn-xs">SAVE</button>
+				<button ng-click="studentEdit = null; studentTable.reload(); $event.stopPropagation();" ng-show="studentEdit == $index" class="btn btn-warning btn-xs">CANCEL</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
