@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Reverse Geocoding</title>
+        <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+        }
+
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        #floating-panel {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            margin-left: -180px;
+            width: 350px;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+        }
+
+        #latlng {
+            width: 225px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script>
+            var map;
+            var marker;
+            function initMap() {
+                var flipkartOffice = {lat: 12.933242, lng: 77.694411};
+                map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: flipkartOffice
+                });
+                var geocoder = new google.maps.Geocoder;
+                var infowindow = new google.maps.InfoWindow;
+
+                map.addListener("click", function (event) {
+                    addMarker(event.latLng);
+                    geocodeLatLng(geocoder, map, infowindow, event.latLng);
+                });
+
+                addMarker(flipkartOffice);
+            }
+
+            function addMarker(location) {
+                deleteMarkers();
+                marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+
+            function deleteMarkers() {
+                if (marker != null) {
+                    marker.setMap(null);
+                }
+                marker = null;
+            }
+
+            function geocodeLatLng(geocoder, map, infowindow, location) {
+                geocoder.geocode({"location": location}, function (results, status) {
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        if (results[1]) {
+                            addMarker(location);
+                            infowindow.setContent(results[1].formatted_address);
+                            infowindow.open(map, marker);
+                        } else {
+                            window.alert("No results found");
+                        }
+                    } else {
+                        window.alert("Geocoder failed due to: " + status);
+                    }
+                });
+            }
+    </script>
+
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmocvjbweKnUoT4msHzPcmo52NDDkjfAs&callback=initMap">
+    </script>
+    </body>
+</html>

@@ -5,6 +5,10 @@
 # A school controller showing a school home page
 GET        /                    controllers.AppController.index
 
+GET        /naya                controllers.AppController.naya
+
+GET        /mock                controllers.AppController.mock
+
 # A school controller showing a school home page
 GET        /data/student        controllers.SchoolController.getStudents
 PUT        /data/student        controllers.SchoolController.upsertStudent

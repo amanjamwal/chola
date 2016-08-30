@@ -9,6 +9,10 @@ class AppController extends Controller {
 
   def index = Action(Ok(views.html.main.render()))
 
+  def naya = Action(Ok(views.html.naya.render()))
+
+  def mock = Action(Ok(views.html.mock.render()))
+
   def angular(any: Any) = index
 
 }
